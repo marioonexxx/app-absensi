@@ -10,9 +10,8 @@ class SiswaOrtuController extends Controller
 {
     public function index()
     {
-        $id = Auth::user()->id;
-        $data = Absensi::where('siswa_id', $id)->get();
-
-        return view('siswa.upload', compact('data'));
+       return view('siswa.dashboard');
     }
+
+    
 }

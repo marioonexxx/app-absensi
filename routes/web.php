@@ -10,6 +10,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SesiController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\SiswaOrtuController;
+use App\Http\Controllers\SuratIjinController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -67,6 +68,7 @@ Route::middleware('auth','Petugas', 'verified')->group(function(){
 
 Route::middleware('auth','Siswa','verified')->group(function(){
     Route::get('/siswa-orangtua/dashboard',[SiswaOrtuController::class, 'index'])->name('siswa.dashboard');
+    Route::resource('/surat-ijin',SuratIjinController::class);
 });
 
 

@@ -64,7 +64,7 @@
                                     src="{{ asset('cuba/assets/images/logo/logo-smansa.png') }}" alt="Login Page">
 
                             </a>
-                            <h1 class="fw-bold mt-2">SiPeka (Sistem Presensi Kehadiran)</h1>
+                            <h1 class="fw-bold mt-2">Sistem Absen Digital</h1>
                             <p class="mb-4">SMA Negeri 1 Ambon</p>
                         </div>
 

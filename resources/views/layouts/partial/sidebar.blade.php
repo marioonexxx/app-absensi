@@ -62,7 +62,7 @@
                                     <use href="{{ asset('cuba/assets/svg/icon-sprite.svg#fill-reports') }}"></use>
                                 </svg><span>Rekap Absen</span></a>
                         </li>
-                        <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a
+                        {{-- <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a
                                 class="sidebar-link sidebar-title link-nav" href="{{ route('absen.index') }}"
                                 target="_self">
                                 <svg class="stroke-icon">
@@ -71,7 +71,7 @@
                                 <svg class="fill-icon">
                                     <use href="{{ asset('cuba/assets/svg/icon-sprite.svg#fill-reports') }}"></use>
                                 </svg><span>Ambil Absen</span></a>
-                        </li>
+                        </li> --}}
 
                         
 
@@ -220,7 +220,7 @@
                             </div>
                         </li>
                         <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a
-                                class="sidebar-link sidebar-title link-nav" href="#" target="">
+                                class="sidebar-link sidebar-title link-nav" href="{{ route('siswa.dashboard') }}" >
                                 <svg class="stroke-icon">
                                     <use href="{{ asset('cuba/assets/svg/icon-sprite.svg#stroke-home') }}"></use>
                                 </svg>
@@ -229,7 +229,7 @@
                                 </svg><span>Dashboard</span></a>
                         </li>
                         <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a
-                                class="sidebar-link sidebar-title link-nav" href="#" target="">
+                                class="sidebar-link sidebar-title link-nav" href="#">
                                 <svg class="stroke-icon">
                                     <use href="{{ asset('cuba/assets/svg/icon-sprite.svg#stroke-home') }}"></use>
                                 </svg>
@@ -238,7 +238,7 @@
                                 </svg><span>Rekapan Absen</span></a>
                         </li>
                         <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a
-                                class="sidebar-link sidebar-title link-nav" href="#" target="">
+                                class="sidebar-link sidebar-title link-nav" href="{{ route('surat-ijin.index') }}">
                                 <svg class="stroke-icon">
                                     <use href="{{ asset('cuba/assets/svg/icon-sprite.svg#stroke-home') }}"></use>
                                 </svg>
