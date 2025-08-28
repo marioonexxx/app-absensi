@@ -28,7 +28,7 @@
                         <div class="card-header">
                             <h5>Tabel Data</h5>
                         </div>
-                        <div class="card-body">                          
+                        <div class="card-body">
 
                             <!-- Tabel -->
                             <table class="table table-bordered" id="dataTable">
@@ -52,16 +52,46 @@
                                     @foreach ($data as $index => $item)
                                         <tr>
                                             <td>{{ $index + 1 }}</td>
-                                            <td>{{ $item->siswa_id }}</td>
-                                            <td>{{ $item->kelas_id }}</td>
-                                            <td>{{ $item->sesi_id }}</td>
-                                            <td>{{ $item->absen_tgl }}</td>
+                                            <td>{{ $item->siswa->nama_lengkap }}</td>
+                                            <td>{{ $item->siswa->kelas->nama_kelas }}</td>
+                                            <td>{{ $item->siswa->kelas->sesi->nama_sesi }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($item->absen_tgl)->translatedFormat('j F Y') }}
+                                            </td>
                                             <td>{{ $item->absen_datang }}</td>
                                             <td>{{ $item->absen_pulang }}</td>
-                                            <td>{{ $item->absen_terlambat.' Menit' }}</td>
+                                            <td>
+                                                @if (is_null($item->absen_terlambat))
+                                                    <span class="badge bg-success">Tidak Terlambat</span>
+                                                @else
+                                                    <span class="badge bg-danger">{{ $item->absen_terlambat }} Menit</span>
+                                                @endif
+                                            </td>
+
                                             <td>{{ $item->absen_keterangan }}</td>
                                             <td>{{ $item->absen_bukti }}</td>
-                                            <td>{{ $item->validasi }}</td>
+                                            <td>
+                                                @switch($item->absen_validasi)
+                                                    @case(1)
+                                                        <span class="badge bg-success">Valid</span>
+                                                    @break
+
+                                                    @case(2)
+                                                        <span class="badge bg-danger">Ijin/Sakit Ditolak</span>
+                                                    @break
+
+                                                    @case(3)
+                                                        <span class="badge bg-info">Validasi Wali Kelas</span>
+                                                    @break
+
+                                                    @case(4)
+                                                        <span class="badge bg-warning">Validasi Guru Piket</span>
+                                                    @break
+
+                                                    @default
+                                                        <span class="badge bg-secondary">Belum Divalidasi</span>
+                                                @endswitch
+                                            </td>
+
                                             <td>
                                                 <!-- Tombol Edit -->
                                                 {{-- <button class="btn btn-warning btn-sm" data-bs-toggle="modal"

@@ -14,21 +14,18 @@ return new class extends Migration
         Schema::create('absensi', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('siswa_id')->nullable();
-            $table->unsignedBigInteger('kelas_id')->nullable();
-            $table->unsignedBigInteger('sesi_id')->nullable();
-            $table->date('absen_tgl')->nullable(); //tgl absen
-            $table->time('absen_datang')->nullable(); //jam datang siswa
-            $table->time('absen_pulang')->nullable(); //jam pulang siswa
-            $table->time('absen_terlambat')->nullable(); // jam perhitungan terlambat
-            $table->string('absen_keterangan')->nullable(); // sakit, ijin, alpa (bisa dimodifikasi nanti oleh orang tua/wali  kelas)
-            $table->string('absen_bukti')->nullable(); // orang tua/wali kelas upload file surat sakit/ijin
-            $table->string('absen_validasi')->nullable(); // hasil validasi bukti 
+            $table->unsignedBigInteger('bukti_id')->nullable();
+            $table->date('absen_tgl')->nullable();
+            $table->time('absen_datang')->nullable();
+            $table->time('absen_pulang')->nullable();
+            $table->integer('absen_terlambat')->nullable();
+            $table->text('absen_keterangan')->nullable();
+            $table->boolean('absen_validasi')->default(0);
             $table->timestamps();
 
-
-            $table->foreign('siswa_id')->references('id')->on('siswa')->onDelete('cascade');
-            $table->foreign('sesi_id')->references('id')->on('sesi')->onDelete('set null');
-            $table->foreign('kelas_id')->references('id')->on('kelas')->onDelete('set null');
+            // foreign keys
+            $table->foreign('siswa_id')->references('id')->on('siswa')->onDelete('set null');
+            $table->foreign('bukti_id')->references('id')->on('bukti')->onDelete('set null');
         });
     }
 

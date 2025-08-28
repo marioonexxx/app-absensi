@@ -244,7 +244,7 @@
                                 </svg>
                                 <svg class="fill-icon">
                                     <use href="{{ asset('cuba/assets/svg/icon-sprite.svg#fill-home') }}"></use>
-                                </svg><span>Surat Ijin/Sakit</span></a>
+                                </svg><span>Upload Surat Keterangan</span></a>
                         </li>
                        
                     </ul>

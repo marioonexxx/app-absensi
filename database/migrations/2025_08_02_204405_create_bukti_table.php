@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('upload', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('siswa_id')->nullable();
-            $table->date('tgl_awal')->nullable();
-            $table->date('tgl_akhir')->nullable();
+        Schema::create('bukti', function (Blueprint $table) {
+            $table->id(); // ini otomatis BIGINT UNSIGNED AUTO_INCREMENT
+            $table->string('bukti_upload')->nullable();
+            $table->date('tgl_mulai')->nullable();
+            $table->date('tgl_selesai')->nullable();
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('upload');
+        Schema::dropIfExists('bukti');
     }
 };

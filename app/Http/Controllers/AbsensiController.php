@@ -17,7 +17,19 @@ class AbsensiController extends Controller
     public function rekap()
     {
 
-        $data = Absensi::whereDate('created_at', Carbon::today())->get();
+        // $data = Absensi::with(['siswa', 'kelas', 'sesi'])
+        //     ->whereDate('created_at', Carbon::today())
+        //     ->get();
+
+        // $data = Absensi::with(['siswa.kelas', 'siswa.sesi'])
+        //     ->whereDate('absen_tgl', Carbon::today())
+        //     ->get();
+
+        // $data = Absensi::with(['siswa.kelas.sesi'])
+        //     ->whereDate('absen_tgl', Carbon::today())
+        //     ->get();
+
+        $data = Absensi::with('siswa.kelas.sesi')->get();
         return view('data-absensi.rekap', compact('data'));
     }
 

@@ -23,7 +23,7 @@
         <!-- Container-fluid starts-->
         <div class="container-fluid">
             <div class="row starter-main">
-                <div class="col-xl-4">
+                {{-- <div class="col-xl-4">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <h5 class="mb-0">
@@ -72,8 +72,8 @@
 
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-8">
+                </div> --}}
+                <div class="col-xl-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <h5 class="mb-0">
@@ -89,9 +89,9 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Siswa ID</th>
-                                        <th>Kelas ID</th>
-                                        <th>Sesi ID</th>
+                                        <th>Bukti</th>
+                                        <th>Tanggal Mulai Ijin/Sakit</th>
+                                        <th>Tanggal Selesai Ijin/Sakit</th>
                                         <th>Tgl Absen</th>
                                         <th>Jam Datang</th>
                                         <th>Jam Pulang</th>

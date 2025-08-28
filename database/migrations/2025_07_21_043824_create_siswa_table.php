@@ -13,14 +13,19 @@ return new class extends Migration
     {
         Schema::create('siswa', function (Blueprint $table) {
             $table->id();
+            $table->string('rfid')->unique()->nullable();
             $table->string('nisn')->unique()->nullable();
-            $table->string('nama_lengkap')->nullable();
-            $table->unsignedBigInteger('kelas_id')->nullable();
+            $table->string('nama_lengkap')->nullable();            
             $table->string('foto_url')->nullable();
             $table->string('wa_ortu')->nullable();
+
+            //relasi
+            $table->unsignedBigInteger('kelas_id')->nullable();
+            
             $table->timestamps();
 
             $table->foreign('kelas_id')->references('id')->on('kelas')->onDelete('set null');
+            
 
 
         });

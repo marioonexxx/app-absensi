@@ -10,15 +10,13 @@ class Absensi extends Model
     use HasFactory;
     protected $table = 'absensi';
     protected $fillable = [
-        'siswa_id',       
-        'kelas_id',
-        'sesi_id',
+        'siswa_id',
+        'bukti_id',
         'absen_tgl',
         'absen_datang',
         'absen_pulang',
         'absen_terlambat',
-        'absen_keterangan',
-        'absen_bukti',
+        'absen_keterangan',        
         'absen_validasi',
     ];
 
@@ -28,17 +26,12 @@ class Absensi extends Model
         return $this->belongsTo(Siswa::class);
     }
 
-    // Relasi ke kelas
-    public function kelas()
+    public function bukti()
     {
-        return $this->belongsTo(Kelas::class);
+        return $this->belongsTo(Bukti::class);
     }
 
-    // Relasi ke sesi
-    public function sesi()
-    {
-        return $this->belongsTo(Sesi::class);
-    }
+    
 
    
 }

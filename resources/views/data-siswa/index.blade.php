@@ -42,6 +42,7 @@
                                         <th>No</th>
                                         <th>Foto</th>
                                         <th>NISN</th>
+                                        <th>Nomor Kartu</th>
                                         <th>Nama Lengkap</th>
                                         <th>Kelas</th>
                                         <th>No. WA Ortu</th>
@@ -61,6 +62,7 @@
                                                 @endif
                                             </td>
                                             <td>{{ $item->nisn }}</td>
+                                            <td>{{ $item->rfid }}</td>
                                             <td>{{ $item->nama_lengkap }}</td>
                                             <td>{{ $item->kelas->nama_kelas }}</td>
                                             <td>{{ $item->wa_ortu }}</td>
@@ -99,6 +101,11 @@
                                                                 <label>NISN</label>
                                                                 <input type="text" name="nisn" class="form-control"
                                                                     value="{{ $item->nisn }}">
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <label>Nomor Kartu (RFID)</label>
+                                                                <input type="text" name="rfid" class="form-control"
+                                                                    value="{{ $item->rfid }}">
                                                             </div>
                                                             <div class="mb-2">
                                                                 <label>Upload Foto (Maks 1MB)</label>
@@ -158,6 +165,11 @@
                                                     <label>NISN</label>
                                                     <input type="text" name="nisn" class="form-control"
                                                         value="{{ old('nisn') }}">
+                                                </div>
+                                                <div class="mb-2">
+                                                    <label>ID Kartu (RFID)</label>
+                                                    <input type="text" name="rfid" class="form-control"
+                                                        value="{{ old('rfid') }}">
                                                 </div>
                                                 <div class="mb-2">
                                                     <label>Upload Foto (Maks 1MB)</label>

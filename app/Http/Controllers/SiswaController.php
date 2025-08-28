@@ -22,6 +22,7 @@ class SiswaController extends Controller
     {
         $request->validate([
             'nisn'         => 'nullable|unique:siswa,nisn',
+            'rfid'         => 'nullable|string',
             'nama_lengkap' => 'nullable|string',
             'kelas'        => 'nullable|string',
             'wa_ortu'      => 'nullable|string',
@@ -56,6 +57,7 @@ class SiswaController extends Controller
 
         $request->validate([
             'nisn'         => 'nullable|unique:siswa,nisn,' . $id,
+            'rfid'         => 'nullable|string|max:255',
             'nama_lengkap' => 'nullable|string|max:255',
             'kelas'        => 'nullable|string|max:50',
             'wa_ortu'      => 'nullable|string|max:20',
